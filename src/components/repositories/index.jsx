@@ -1,4 +1,5 @@
 import React from 'react'
+import RepositoryItem from '../repositoryItem';
 
 import * as S from './styled';
 
@@ -12,8 +13,12 @@ const Repositories = () => {
         <S.WrapperTab>Repositories</S.WrapperTab>
         <S.WrapperTab>Starred</S.WrapperTab>
       </S.WrapperTabList>
-      <S.WrapperTabPanel>Panel Repositories</S.WrapperTabPanel>
-      <S.WrapperTabPanel>Panel Starred</S.WrapperTabPanel>
+      <S.WrapperTabPanel>
+        <RepositoryItem name="repo1" linkToRepo="https://www.google.com.br" fullname="Fullname" />
+      </S.WrapperTabPanel>
+      <S.WrapperTabPanel>
+        <RepositoryItem name="repo2" linkToRepo="https://www.google.com.br" fullname="Fullname" />
+      </S.WrapperTabPanel>
     </S.WrapperTabs>
   )
 }
