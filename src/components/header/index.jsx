@@ -6,7 +6,7 @@ const Header = () => {
   const [userNameForSearch, setUserNameForSearch] = useState();
   const { getUser } = useGithub();
 
-  const submitGetUser = ( userNameForSearch ) => {
+  const submitGetUser = () => {
     if (!userNameForSearch) return
     return getUser( userNameForSearch )
   }
@@ -17,9 +17,9 @@ const Header = () => {
         <input
           type="text"
           placeholder="Digite o username para pesquisar"
-          onChange={submitGetUser}
+          onChange={(event) => setUserNameForSearch(event.target.value)}
         />
-        <button type="submit">Buscar</button>
+        <button type="submit" onClick={submitGetUser}>Buscar</button>
       </S.Wrapper>
     </header>
   )

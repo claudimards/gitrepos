@@ -9,16 +9,34 @@ const Profile = () => {
   return (
     <S.Wrapper>
       <S.WrapperImage
-        src="https://avatars.githubusercontent.com/u/39865182?v=4"
-        alt="Avatar claudimards"
+        src={githubState.user.avatarUrl}
+        alt={`Avatar ${githubState.user.name}`}
       />
       <S.WrapperInfoUser>
         <div>
           <h1>{githubState.user.name}</h1>
           <S.WrapperUserName>
+            <h3>Location: </h3>
+            <span>
+              {githubState.user.location}
+            </span>
+          </S.WrapperUserName>
+          <S.WrapperUserName>
             <h3>Username: </h3>
             <a href={githubState.user.htmlUrl} target="_blank" rel="noreferrer">
               {githubState.user.login}
+            </a>
+          </S.WrapperUserName>
+          <S.WrapperUserName>
+            <h3>Company: </h3>
+            <span>
+              {githubState.user.company}
+            </span>
+          </S.WrapperUserName>
+          <S.WrapperUserName>
+            <h3>Site: </h3>
+            <a href={githubState.user.blog} target="_blank" rel="noreferrer">
+              {githubState.user.blog}
             </a>
           </S.WrapperUserName>
         </div>
